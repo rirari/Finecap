@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block center %}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <div class="small mb-1">EMPRESA {{ reserva.nome_empresa }}</div>
+                <h1 class="display-5 fw-bolder">STAND {{ reserva.stand }}</h1>
+                <div class="fs-5 mt-2 mb-5">
+                    <!-- <span class="text-decoration-line-through">$45.00</span> -->
+                    {% if reserva.quitado %}
+                        Status: Quitado
+                    {% else %}
+                        Status: Não quitado
+                    {% endif %}
+                </div>
+
+                <div class="mt-1 mb-3">Stand reservado para FINECAP</div>
+
+                <div class="lead"></p>
+                <div class="d-flex">
+                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                        style="max-width: 3rem" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
